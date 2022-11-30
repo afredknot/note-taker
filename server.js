@@ -1,42 +1,29 @@
 const express = require('express');
 const fs = require('fs');
-// const util = require('util');
-// const { readFromFile } = require('./Develop/public//helpers/fsUtils');
 const path = require('path');
-// const makeNote = require ('./Develop/db/db.json')
-const api = require('./Develop/public/assets/js/index.js')
 const app = express();
-
 const PORT =  process.env.PORT || 3001;
-
-
+const makeNote = require('./db/db.json')
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use('/api', api);
 app.use(express.static('public'));
+
 // -----------------------------------
 // app.get('api/notes', (req,res) => {
 //   res.json(makeNote.slice(1));
 // })
 
-app.get('/', (req, res) => {res.sendFile(path.join(__dirname, './Develop/public/index.html'));
-});
+app.get('/', (req, res) => res.sendFile(path.join(__dirname, '/public/index.html'))
+);
 
 app.get('/notes', (req, res) =>
-  res.sendFile(path.join(__dirname, './Develop/public/notes.html'))
+  res.sendFile(path.join(__dirname, '/public/notes.html'))
 );
 
-app.post('/api/notes', (req, res) =>
-  res.sendFile(path.join(__dirname, './Develop/public/notes.html'))
-);
-app.get('/api/notes', (req, res) => {
-  console.info(`${req.method} request received for notes`);
-  readFromFile('./db/db.json').then((data) => res.json(JSON.parse(data)));
-});
 
 app.get('*', (req, res) =>
-  res.sendFile(path.join(__dirname, './Develop/public/index.html'))
+  res.sendFile(path.join(__dirname, '/public/index.html'))
 );
 //---------------------------------------
 function createNewNote(body, notesArray) {
@@ -58,8 +45,8 @@ function createNewNote(body, notesArray) {
   return newNote;
 }
 
-app.post('/api/notes', (req, res) => {
-  const newNote = createNewNote(req.body, makeNotes);
+app.post('./api/notes', (req, res) => {
+  const newNote = createNewNote(req.body, makeNote);
   res.json(newNote);
 });
 app.listen(PORT, () =>

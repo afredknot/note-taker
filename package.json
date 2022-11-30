@@ -1,25 +1,25 @@
 {
-  "name": "mini-project",
+  "name": "note-taker",
   "version": "1.0.0",
+  "description": "",
   "main": "server.js",
-  "license": "MIT",
-  "dependencies": {
-    "express": "^4.18.2",
-    "uuid":"^8.3.2"
-  },
   "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
-  "description": "",
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/afredknot/note-taker.git"
   },
   "keywords": [],
   "author": "",
+  "license": "ISC",
   "bugs": {
     "url": "https://github.com/afredknot/note-taker/issues"
   },
-  "homepage": "https://github.com/afredknot/note-taker#readme"
+ 
+  "dependencies": {
+    "express": "^4.18.2",
+    "uuid": "^9.0.0"
+  }
 }
