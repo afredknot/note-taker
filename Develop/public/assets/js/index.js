@@ -1,15 +1,10 @@
+
+
 let noteTitle;
 let noteText;
 let saveNoteBtn;
 let newNoteBtn;
 let noteList;
-// const note = require('express').Router();
-// const { v4: uuidv4 } = require('uuid');
-// const express = require ('express')
-
-// const PORT = process.env.PORT || 3001;
-
-  
 
 if (window.location.pathname === '/notes') {
   noteTitle = document.querySelector('.note-title');
@@ -110,7 +105,7 @@ const handleNoteView = (e) => {
 };
 
 // Sets the activeNote to and empty object and allows the user to enter a new note
-const handleNewNoteView = (e) => {
+const handleNewNoteView = () => {
   activeNote = {};
   renderActiveNote();
 };
