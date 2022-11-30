@@ -4,6 +4,7 @@ const path = require('path');
 const app = express();
 const PORT =  process.env.PORT || 3001;
 const makeNote = require('./db/db.json')
+const req = require('./public/assets/js/note')
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -45,7 +46,7 @@ function createNewNote(body, notesArray) {
   return newNote;
 }
 
-app.post('./api/notes', (req, res) => {
+app.post('/api/notes', (req, res) => {
   const newNote = createNewNote(req.body, makeNote);
   res.json(newNote);
 });
