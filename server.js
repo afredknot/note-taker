@@ -75,7 +75,7 @@ app.post('/', (req, res) => {
       note_id: uuid(),
     };
 
-    readAndAppend(newNote, './db/db.json');
+    readAndAppend(newNote, './db/db.json', './public/notes.html');
     res.json(`Tip added successfully 🚀`);
   } else {
     res.error('Error in adding tip');

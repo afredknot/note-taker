@@ -31,6 +31,9 @@ const getNotes = () =>
     headers: {
       'Content-Type': 'application/json',
     },
+    catch (error){
+      console.log(error)
+    }
   });
 
 const saveNote = (note) =>
@@ -40,6 +43,10 @@ const saveNote = (note) =>
       'Content-Type': 'application/json',
     },
     body: JSON.stringify(note),
+    
+    catch (error){
+      console.log(error)
+    }
   });
 
 const deleteNote = (id) =>
@@ -48,6 +55,9 @@ const deleteNote = (id) =>
     headers: {
       'Content-Type': 'application/json',
     },
+    catch (error){
+      console.log(error)
+    }
   });
 
 const renderActiveNote = () => {
