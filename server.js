@@ -20,10 +20,9 @@ app.use(express.static('public'));
 // app.get('api/notes', (req,res) => {
 //   res.json(makeNote.slice(1));
 // })
-app.get('/api/notes', (req, res) => {
-  readFromFile('./db/db.json').then((data) => res.json(makeNote));
-});
-
+// app.get('/api/notes', (req, res) => {
+//   readFromFile('./db/db.json').then((data) => res.json(makeNote));
+// });
 app.get('/', (req, res) => res.sendFile(path.join(__dirname, '/public/index.html'))
 );
 
@@ -61,9 +60,9 @@ app.get('/', (req, res) => {
   readFromFile('./db/db.json').then((data) => res.json(JSON.parse(data)));
 });
 
-// app.get('/api/notes', (req, res) => {
-//   readFromFile('./db/db.json').then((data) => res.json(makeNote));
-// });
+app.get('/api/notes', (req, res) => {
+  readFromFile('./db/db.json').then((data) => res.json(makeNote));
+});
 
 // // POST Route for a new UX/UI tip
 app.post('/', (req, res) => {
@@ -84,10 +83,10 @@ app.post('/', (req, res) => {
 });
 
 
-// app.post('/api/notes', (req, res) => {
-//   const newNote = createNewNote(req.body, makeNote);
-//   res.json(newNote);
-// });
+app.post('/api/notes', (req, res) => {
+  const newNote = createNewNote(req.body, makeNote);
+  res.json(newNote);
+});
 app.listen(PORT, () =>
   console.log(`Example app listening at http://localhost:${PORT}`)
 );
