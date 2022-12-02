@@ -76,9 +76,9 @@ app.post('/', (req, res) => {
     };
 
     readAndAppend(newNote, './db/db.json', './public/notes.html');
-    res.json(`Tip added successfully 🚀`);
+    res.json(`note added successfully 🚀`);
   } else {
-    res.error('Error in adding tip');
+    res.error('Error in adding note');
   }
 });
 

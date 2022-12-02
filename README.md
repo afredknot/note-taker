@@ -1,4 +1,6 @@
 # Note Taker Starter Code
+## Description
+Was given starter code and had to create a server js to be able to take and print input into a json file and then print them back onto the page so you can go through them. and they save on the server and youre able to retrieve the previous data. I also had to deploy this app to heroku to use as a server.
 
 ## User Story
 AS A small business owner
@@ -26,6 +28,9 @@ THEN I am presented with empty fields to enter a new note title and the note’s
 here is my deployed app :: https://powerful-chamber-06650.herokuapp.com/
 git hub repo link :: https://github.com/afredknot/note-taker
 
-[!screenshot]
 
-[!screenshot]
+landing page
+[!screenshot](./public/assets/screenshots/screenshot_landing_page.png)
+
+note page
+[!screenshot](./public/assets/screenshots/screenshot_note_page.png)
